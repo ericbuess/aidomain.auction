@@ -389,6 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { name: "chat" },
           { name: "agi" },
           { name: "gpt" },
+          { name: "gpt5" },
           { name: "agent" },
           { name: "model" },
           { name: "voice" },

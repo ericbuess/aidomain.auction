@@ -41,11 +41,6 @@ section {
   margin-bottom: 10px;
 }
 
-.intro {
-  color: #FFFFFF;
-  margin-bottom: 5px;
-}
-
 .info-toggle {
   margin-bottom: 10px;
 }
@@ -66,21 +61,22 @@ section {
 }
 
 .info-content {
-  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
   background-color: #FFFFFF;
-  padding: 20px;
+  padding: 0 20px;
   border-radius: 5px;
   color: #333;
   margin-bottom: 20px;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease-out;
 }
 
 .info-content.show {
-  display: block;
   max-height: 1000px; /* Adjust this value based on your content */
-  transition: max-height 0.5s ease-in;
+}
+
+.info-content .content-wrapper {
+  padding: 20px 0;
 }
 
 .cta-button {
