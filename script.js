@@ -1,5 +1,17 @@
 // script.js
 document.addEventListener("DOMContentLoaded", () => {
+  const toggleInfo = document.getElementById("toggle-info");
+  const infoContent = document.getElementById("info-content");
+  const chevron = document.querySelector(".chevron");
+
+  toggleInfo.addEventListener("click", (event) => {
+    event.preventDefault();
+    infoContent.classList.toggle("show");
+    chevron.innerHTML = infoContent.classList.contains("show")
+      ? "&#9650;"
+      : "&#9660;";
+  });
+
   const domainList = document.querySelector(".domain-list");
   const searchInput = document.querySelector(".search-input");
 

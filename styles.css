@@ -41,6 +41,48 @@ section {
   margin-bottom: 10px;
 }
 
+.intro {
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+
+.info-toggle {
+  margin-bottom: 10px;
+}
+
+.info-toggle a {
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.info-toggle a:hover {
+  text-decoration: underline;
+}
+
+.chevron {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.info-content {
+  display: none;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 5px;
+  color: #333;
+  margin-bottom: 20px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.info-content.show {
+  display: block;
+  max-height: 1000px; /* Adjust this value based on your content */
+  transition: max-height 0.5s ease-in;
+}
+
 .cta-button {
   display: inline-block;
   padding: 10px 20px;
