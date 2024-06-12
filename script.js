@@ -309,8 +309,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       function updateDomainCount() {
-        const domainCount = document.getElementById("domain-count");
-        domainCount.textContent = `${domains.length} domains found`;
+        const domainCountNumber = document.getElementById(
+          "domain-count-number"
+        );
+        domainCountNumber.textContent = domains.length;
+
+        // Trigger reflow to restart the animation
+        domainCountNumber.classList.remove("animated");
+        void domainCountNumber.offsetWidth; // Trigger a reflow
+        domainCountNumber.classList.add("animated");
       }
 
       function handleTagClick(event) {
