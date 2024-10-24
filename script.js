@@ -37,35 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
           domainName.textContent = domain.name;
           domainCard.appendChild(domainName);
 
-          // Calculate original price
-          const originalPrice = parseFloat(domain.price) * 2.07;
-          const formattedOriginalPrice = originalPrice.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD",
-          });
-
-          // Current price
-          const price = parseFloat(domain.price);
-          const formattedPrice = price.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD",
-          });
-
-          const domainPrice = document.createElement("div");
-          domainPrice.classList.add("domain-price-container");
-
-          const originalPriceElement = document.createElement("span");
-          originalPriceElement.classList.add("original-price");
-          originalPriceElement.textContent = formattedOriginalPrice;
-
-          const currentPriceElement = document.createElement("span");
-          currentPriceElement.classList.add("current-price");
-          currentPriceElement.textContent = formattedPrice;
-
-          domainPrice.appendChild(originalPriceElement);
-          domainPrice.appendChild(currentPriceElement);
-          domainCard.appendChild(domainPrice);
-
           const domainBlurb = document.createElement("p");
           domainBlurb.classList.add("domain-blurb");
           domainBlurb.textContent = domain.blurb;
@@ -91,21 +62,21 @@ document.addEventListener("DOMContentLoaded", () => {
           actionsContainer.appendChild(buyNowLink);
 
           // Make Offer link
-          if (domain.minOffer) {
-            const makeOfferLink = document.createElement("a");
-            makeOfferLink.classList.add("make-offer-link");
-            makeOfferLink.classList.add("button-link");
-            makeOfferLink.href = `https://${domain.name}`;
-            makeOfferLink.target = "_blank";
-            makeOfferLink.textContent = "Make an Offer";
-            if (domain.inUse) {
-              makeOfferLink.addEventListener("click", (event) => {
-                event.preventDefault();
-                openInUseModal(domain.name);
-              });
-            }
-            actionsContainer.appendChild(makeOfferLink);
-          }
+          // if (domain.minOffer) {
+          //   const makeOfferLink = document.createElement("a");
+          //   makeOfferLink.classList.add("make-offer-link");
+          //   makeOfferLink.classList.add("button-link");
+          //   makeOfferLink.href = `https://${domain.name}`;
+          //   makeOfferLink.target = "_blank";
+          //   makeOfferLink.textContent = "Make an Offer";
+          //   if (domain.inUse) {
+          //     makeOfferLink.addEventListener("click", (event) => {
+          //       event.preventDefault();
+          //       openInUseModal(domain.name);
+          //     });
+          //   }
+          //   actionsContainer.appendChild(makeOfferLink);
+          // }
 
           // Share button
           const shareButton = document.createElement("button");
